@@ -1,9 +1,11 @@
 <script lang="ts" context="module">
     import type { Load } from "@sveltejs/kit";
     export const load: Load = ({ url }) => {
+        const moeLast = url.searchParams.get('moe')?.toString() ?? '';
+        const moeText = `Fuck you, Moe` + (moeLast ? ` ${moeLast}` : '');
         return {
             props: {
-                moe: url.searchParams.get('moe')?.toString() ?? undefined
+                moe: moeText
             }
         }
     }
@@ -11,17 +13,20 @@
 
 <script lang="ts">
     export let moe: string;
-
-    $: moeText = `Fuck you, Moe${moe ? ` ${moe}` : ''}`
 </script>
 
 <svelte:head>
-    <title>{moeText}</title>
+    <title>{moe}</title>
+    <meta property="og:title" content={moe} />
+    <meta property="og:description" content={`You're a real piece of shit.`}>
+
+    <meta name=”twitter:title” content={moe} />
+    <meta name=”twitter:description” content={`You're a real piece of shit.`} />
 </svelte:head>
 
 <div>
     <h1>
-        {moeText}
+        {moe}
     </h1>
 </div>
 
@@ -31,6 +36,7 @@
         display: grid;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
     h1 {
         display: inline-block;
@@ -62,7 +68,7 @@
             font-size: 6rem;
         }
     }
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1500px) {
         h1 {
             font-size: 8rem;
         }
