@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+}
+body {
+    background: #e0fbfc;
+}
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background: #0e172a;
+    }
+}
