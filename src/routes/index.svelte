@@ -1,11 +1,9 @@
 <script lang="ts" context="module">
     import type { Load } from "@sveltejs/kit";
     export const load: Load = ({ url }) => {
-        const moeLast = url.searchParams.get('moe')?.toString() ?? '';
-        const moeText = `Fuck you, Moe` + (moeLast ? ` ${moeLast}` : '');
         return {
             props: {
-                moe: moeText
+                moe:  `Fuck you, Moe` + (url.searchParams.get('moe') ? ` ${url.searchParams.get('moe').toString()}` : '')
             }
         }
     }
@@ -33,6 +31,7 @@
 <style>
     div {
         min-height: 100vh;
+        padding: 1rem;
         display: grid;
         align-items: center;
         justify-content: center;
@@ -50,27 +49,27 @@
     }
     @media screen and (min-width: 300px) {
         h1 {
-            font-size: 2rem;
+            font-size: 3.5rem;
         }
     }
     @media screen and (min-width: 480px) {
         h1 {
-            font-size: 3rem;
+            font-size: 4.5rem;
         }
     }
     @media screen and (min-width: 750px) {
         h1 {
-            font-size: 4rem;
+            font-size: 5.5rem;
         }
     }
     @media screen and (min-width: 1000px) {
         h1 {
-            font-size: 6rem;
+            font-size: 6.5rem;
         }
     }
     @media screen and (min-width: 1500px) {
         h1 {
-            font-size: 8rem;
+            font-size: 8.5rem;
         }
     }
 </style>
