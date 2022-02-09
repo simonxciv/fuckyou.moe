@@ -16,10 +16,7 @@
 <svelte:head>
     <title>{moe}</title>
     <meta property="og:title" content={moe} />
-    <meta property="og:description" content={`You're a real piece of shit.`}>
-
-    <meta name=”twitter:title” content={moe} />
-    <meta name=”twitter:description” content={`You're a real piece of shit.`} />
+    <meta name="twitter:title" content={moe} />
 </svelte:head>
 
 <div>
