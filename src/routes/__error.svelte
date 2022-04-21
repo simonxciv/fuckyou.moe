@@ -13,7 +13,13 @@
 	export let status;
 </script>
 
-<h1>{status}<span>fucking idiot</span></h1>
+<svelte:head>
+	<title>{status}, fucking idiot</title>
+	<meta property="og:title" content={`${status}, fucking idiot`} />
+	<meta name="twitter:title" content={`${status}, fucking idiot`} />
+</svelte:head>
+
+<h1>{status} <span>fucking idiot</span></h1>
 
 <style>
 	span {
