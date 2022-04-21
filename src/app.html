@@ -4,10 +4,10 @@
 		<meta charset="utf-8" />
 		<meta name="description" content="You're a real piece of shit, you know that right?" />
 
-		<link rel="apple-touch-icon" sizes="180x180" href="%svelte.assets%/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="%svelte.assets%/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="%svelte.assets%/favicon-16x16.png">
-		<link rel="manifest" href="%svelte.assets%/site.webmanifest">
+		<link rel="apple-touch-icon" sizes="180x180" href="%svelte.assets%/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="%svelte.assets%/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="%svelte.assets%/favicon-16x16.png" />
+		<link rel="manifest" href="%svelte.assets%/site.webmanifest" />
 
 		<meta property="og:image" content="%svelte.assets%/fuck-you-moe.png" />
 		<meta property="og:type" content="website" />
@@ -20,32 +20,54 @@
 		<meta name="twitter:description" content="You're a real piece of shit, you know that right?" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="preload" as="style">
-		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+			rel="preload"
+			as="style"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
+		/>
 
 		<noscript>
-			<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+			<link
+				href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+				rel="stylesheet"
+			/>
 		</noscript>
-		
-		<script defer data-domain="fuckyou.moe" data-api="/asset/event" src="/asset/script.manual.js"></script>
-		<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+		<script
+			defer
+			data-domain="fuckyou.moe"
+			data-api="/asset/event"
+			src="/asset/script.manual.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+		</script>
 
 		<script>
 			function prepareUrl(params) {
-				const url = new URL(location.href)
-				const queryParams = new URLSearchParams(location.search)
-				let customUrl = url.protocol + "//" + url.hostname + url.pathname.replace(/\/$/, '')
+				const url = new URL(location.href);
+				const queryParams = new URLSearchParams(location.search);
+				let customUrl = url.protocol + '//' + url.hostname + url.pathname.replace(/\/$/, '');
 				for (const paramName of params) {
-					const paramValue = queryParams.get(paramName)
-					if (paramValue) customUrl = customUrl + '/' + paramValue
+					const paramValue = queryParams.get(paramName);
+					if (paramValue) customUrl = customUrl + '/' + paramValue;
 				}
-				return customUrl
+				return customUrl;
 			}
-			plausible('pageview', { u: prepareUrl(["moe"]) })
+			plausible('pageview', { u: prepareUrl(['moe']) });
 		</script>
-		  
 
 		%svelte.head%
 	</head>
