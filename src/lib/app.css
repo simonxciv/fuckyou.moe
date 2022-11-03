@@ -1,0 +1,34 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+}
+body {
+	background: #e0fbfc;
+}
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background: #0e172a;
+	}
+}
+.container {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: max-content;
+	align-items: center;
+	justify-content: center;
+}
+h1 {
+	max-width: 100vw;
+	text-align: center;
+	display: inline-block;
+	background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	font-family: 'Pacifico', cursive;
+	font-weight: normal;
+	font-size: clamp(2rem, calc(100vw / 18), 100vw);
+	padding: 0 1rem;
+}
